@@ -1,0 +1,1 @@
+Starter kit for building a web application using Vue and Webpack.

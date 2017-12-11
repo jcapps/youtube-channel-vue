@@ -1,0 +1,16 @@
+@import 'header';
+
+#app {
+    text-align: center;
+
+    p {
+        color: green;
+    }
+
+    #products-page {
+        table {
+            margin: 0 auto;
+            text-align: left;
+        }
+    }
+}
