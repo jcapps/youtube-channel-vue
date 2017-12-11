@@ -1,5 +1,14 @@
 import webpack from 'webpack';
 import path from 'path';
+import {YOUTUBE_INFO} from './tools/private/youtubeInfo';
+
+const GLOBALS = {
+    'process.env': {
+        'CLIENT_ID': JSON.stringify(YOUTUBE_INFO.CLIENT_ID),
+        'YOUTUBE_KEY': JSON.stringify(YOUTUBE_INFO.API_KEY),
+        'CHANNEL_ID': JSON.stringify(YOUTUBE_INFO.CHANNEL_ID)
+    }
+};
 
 export default {
     devtool: 'inline-source-map',
@@ -21,6 +30,7 @@ export default {
         extensions: ['.js', '.vue', '.json']
     },
     plugins: [
+        new webpack.DefinePlugin(GLOBALS),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.LoaderOptionsPlugin({
             debug: true,

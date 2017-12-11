@@ -1,6 +1,16 @@
 import webpack from 'webpack';
 import path from 'path';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import {YOUTUBE_INFO} from './tools/private/youtubeInfo';
+
+const GLOBALS = {
+    'process.env': {
+        'NODE_ENV': JSON.stringify('production'),
+        'CLIENT_ID': JSON.stringify(YOUTUBE_INFO.CLIENT_ID),
+        'YOUTUBE_KEY': JSON.stringify(YOUTUBE_INFO.API_KEY),
+        'CHANNEL_ID': JSON.stringify(YOUTUBE_INFO.CHANNEL_ID)
+    }
+};
 
 export default {
     devtool: 'source-map',
@@ -18,6 +28,7 @@ export default {
         extensions: ['.js', '.vue', '.json']
     },
     plugins: [
+        new webpack.DefinePlugin(GLOBALS),
         new webpack.LoaderOptionsPlugin({
             debug: true,
             noInfo: false
