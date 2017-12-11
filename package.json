@@ -1,7 +1,7 @@
 {
-  "name": "vue-webpack-starter-kit",
+  "name": "youtube-channel-vue",
   "version": "1.0.0",
-  "description": "Starter kit for Vue and Webpack",
+  "description": "Site showcasing my YouTube channel",
   "scripts": {
     "start": "npm-run-all --parallel open:src lint:watch test:watch",
     "open:src": "babel-node tools/srcServer.js",
@@ -78,6 +78,6 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/jcapps/youtube-channel-vue.git"
   }
 }
