@@ -1,3 +1,8 @@
 export default {
-    products: []
+    allPlaylists: [],
+    channelInfo: {},
+    ajaxCallsInProgress: {
+        allPlaylists: 0,
+        header: 0
+    }
 };

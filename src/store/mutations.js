@@ -1,16 +1,9 @@
-import * as productMutations from '../mutations/productMutations';
+import ajaxMutations from '../mutations/ajaxMutations';
+import channelMutations from '../mutations/channelMutations';
+import playlistMutations from '../mutations/playlistMutations';
 
 export default {
-    GET_ALL_PRODUCTS: productMutations.GET_ALL_PRODUCTS,
-    CLEAR_PRODUCTS: productMutations.CLEAR_PRODUCTS
+    ...ajaxMutations,
+    ...channelMutations,
+    ...playlistMutations,
 };
-
-// export default {
-//     GET_ALL_PRODUCTS(state, products) {
-//         state.products = products;
-//     },
-
-//     CLEAR_PRODUCTS(state) {
-//         state.products = [];
-//     }
-// };

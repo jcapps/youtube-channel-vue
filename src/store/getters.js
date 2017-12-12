@@ -1,11 +1,9 @@
-import * as productGetters from '../getters/productGetters';
+import ajaxGetters from '../getters/ajaxGetters';
+import channelGetters from '../getters/channelGetters';
+import playlistGetters from '../getters/playlistGetters';
 
 export default {
-    allProducts: productGetters.allProducts
+    ...ajaxGetters,
+    ...channelGetters,
+    ...playlistGetters
 };
-
-// export default {
-//     allProducts(state) {
-//         return state.products;
-//     }
-// };

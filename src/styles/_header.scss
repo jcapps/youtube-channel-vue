@@ -1,28 +1,84 @@
 header {
-    padding: 10px;
-    border-bottom: 2px solid darkblue;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: $header-primary;
+    color: $header-title;
+    width: 100%;
+    z-index: 10;
 
-    #navbar {
-        ul {
-            margin: 0;
-            padding: 0;
+    #titlebar {
+        height: 60px;
+
+        img {
+            height: 40px;
+            width: 40px;
+            margin: 10px;
+            border-radius: 50%;
         }
 
-        li {
-            display: inline-block;
+        h3 {
+            margin: 0;
+        }
+    }
 
-            a {
-                text-decoration: none;
-                margin: 0 5px;
-                padding: 5px 7px;
-                color: darkblue;
-                border: 1px solid darkblue;
+    #titlebar > * {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    #titlebar,
+    #subscribe,
+    #navbar,
+    #searchbar {
+        display: inline-block;
+    }
+
+    #subscribe, #searchbar {
+        float: right;
+    }
+
+    #subscribe {
+        float: right;
+        margin: 10px;
+
+        button {
+            padding: 7px 14px;
+            font-weight: bold;
+            color: $contrast;
+            background-color: $youtube-red;
+            border: 2px solid $youtube-border;
+            border-radius: 10px;
+
+            &:hover {
+                background-color: $youtube-lightred;
             }
 
-            a:hover {
-                color: white;
-                background-color: darkblue;
+            &:active {
+                background-color: $youtube-red;
             }
+        }
+    }
+
+    #searchbar {
+        margin: 5px 15px;
+
+        #search-img {
+            margin-right: 7px;
+            height: 20px;
+            cursor: pointer;
+        }
+        
+        #search {
+            padding: 0;
+            border-radius: 15px;
+            text-indent: 12px;
+            transition: width 0.5s ease-in-out;
+        }
+
+        #search:focus {
+            outline: none;
+            box-shadow: 0 0 2pt 1pt $anchor-blue;
         }
     }
 }

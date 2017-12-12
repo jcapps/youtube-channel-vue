@@ -1,16 +1,54 @@
+@import 'colors';
 @import 'header';
+@import 'navbar';
+
+html, #app {
+    background-color: $page-background;
+}
 
 #app {
-    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    color: $primary;
 
-    p {
-        color: green;
+    .hidden {
+        display: none;
     }
 
-    #products-page {
-        table {
-            margin: 0 auto;
-            text-align: left;
-        }
+    a:hover {
+        cursor: pointer;
     }
+
+    input {
+        height: 30px;
+        width: 200px;
+        border-style: none;
+    }
+
+    select {
+        height: 26.5px;
+        border: 2px solid $gray;
+        cursor: pointer;
+    }
+
+    #content {
+        margin: 0 auto;
+        padding: 100px 10px 20px 10px;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .loading-spinner {
+        position: fixed;
+        height: 50px;
+        width: 50px;
+        top: calc(50% - 25px + 50px); // 25px = half height of spinner, 50px = half height of header
+        left: calc(50% - 25px); // 25px = half width of spinner
+    }
+}
+
+.toastr-center {
+    top: calc(50% - 28px);
+    left: calc(50% - 150px);
+    margin: 0 auto;
 }

@@ -1,20 +1,7 @@
-import * as productActions from '../actions/productActions';
+import channelActions from '../actions/channelActions';
+import playlistActions from '../actions/playlistActions';
 
 export default {
-    getAllProducts: productActions.getAllProducts,
-    clearProducts: productActions.clearProducts
+    ...channelActions,
+    ...playlistActions
 };
-
-// import market from '../api/market';
-
-// export default {
-//     getAllProducts({commit}) {
-//         market.getProducts().then(products => {
-//             commit('GET_ALL_PRODUCTS', products);
-//         });
-//     },
-
-//     clearProducts({commit}) {
-//         commit('CLEAR_PRODUCTS');
-//     }
-// };
