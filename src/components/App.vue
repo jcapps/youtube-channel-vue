@@ -9,7 +9,7 @@
 
 <script>
     import Vue from 'vue';
-    import Header from './common/Header';
+    import Header from './common/header/Header';
 
     export default {
         name: 'App',

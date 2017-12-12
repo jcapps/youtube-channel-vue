@@ -22,7 +22,7 @@
         name: 'SearchBar',
         data() {
             return {
-                searchImgUrl: require('../../images/search.png'),
+                searchImgUrl: require('../../../images/search.png'),
                 searchText: ''
             }
         },

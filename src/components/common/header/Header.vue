@@ -15,11 +15,11 @@
 </template>
 
 <script>
-    import NavBar from './navbar/NavBar';
+    import NavBar from './NavBar';
     import SearchBar from './SearchBar';
     import SubscribeButton from './SubscribeButton';
     import TitleBar from './TitleBar';
-    import * as channelActions from '../../actions/channelActions';
+    import * as channelActions from '../../../actions/channelActions';
 
     export default {
         name: 'Header',
