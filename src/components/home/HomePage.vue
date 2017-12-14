@@ -1,6 +1,7 @@
 <template>
     <div id="home-page">
-        <h1>Home Page</h1>
+        <h2>Most Recent Upload</h2>
+        <!-- <VideoPlayer video={this.props.mostRecentUpload}/> -->
     </div>
 </template>
 
@@ -8,8 +9,9 @@
     export default {
         name: 'HomePage',
         
-        created() {
-            document.title = "Home Page";
+        mounted() {
+            document.title = 'Home: Most Recent Upload';
+            window.scrollTo(0, 0);
         }
     }
 </script>

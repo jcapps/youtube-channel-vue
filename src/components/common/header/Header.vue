@@ -19,7 +19,6 @@
     import SearchBar from './SearchBar';
     import SubscribeButton from './SubscribeButton';
     import TitleBar from './TitleBar';
-    import * as channelActions from '../../../actions/channelActions';
 
     export default {
         name: 'Header',
