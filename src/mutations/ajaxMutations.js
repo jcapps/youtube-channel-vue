@@ -5,7 +5,6 @@ export default {
         state.ajaxCallsInProgress.allPlaylists += 1;
     },
     [types.GETTING_CHANNEL_INFO] (state) {
-        state.ajaxCallsInProgress.about += 1;
-        state.ajaxCallsInProgress.header += 1;
+        state.ajaxCallsInProgress.channelInfo += 1;
     }
 };

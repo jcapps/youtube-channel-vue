@@ -32,7 +32,7 @@
         computed: {
             isLoading() {
                 const totalAjaxCallsInProgress
-                    = this.$store.getters.getAjaxCalls.header
+                    = this.$store.getters.getAjaxCalls.channelInfo
                     + this.$store.getters.getAjaxCalls.allPlaylists;
 
                 return totalAjaxCallsInProgress > 0;
@@ -46,7 +46,6 @@
         },
 
         created() {
-            this.$store.dispatch('getChannelInfo');
             this.$store.dispatch('getAllPlaylists');
         }
     };

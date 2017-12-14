@@ -10,6 +10,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../node_modules/toastr/build/toastr.min.css';
 
 sync(store, router);
+store.dispatch('getChannelInfo');
 
 new Vue({
     el: '#app',

@@ -19,7 +19,7 @@
 
         computed: {
             isLoading() {
-                return this.$store.getters.getAjaxCalls.about > 0
+                return this.$store.getters.getAjaxCalls.channelInfo > 0
             },
             loadingSpinner() {
                 return require('../../images/loading.gif')
@@ -42,10 +42,6 @@
             }
         },
 
-        created() {
-            this.$store.dispatch('getChannelInfo');
-        },
-        
         mounted() {
             document.title = 'About My Channel';
             window.scrollTo(0, 0);
