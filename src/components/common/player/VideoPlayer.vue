@@ -1,14 +1,16 @@
 <template>
     <div class="video-player">
         <div id="player-iframe" />
-        <!-- <VideoPlayerStats video={this.props.video} />
-        <VideoPlayerDescription video={this.props.video} />
-        <VideoPlayerComments video={this.props.video} videoSeek={this.videoSeek} /> -->
+        <video-player-stats :video="video" />
+        <video-player-description :video="video" />
+        <!-- <VideoPlayerComments :video="video" :videoSeek="videoSeek" /> -->
     </div>
 </template>
 
 <script>
     import YouTubePlayer from 'youtube-player';
+    import VideoPlayerDescription from './VideoPlayerDescription';
+    import VideoPlayerStats from './VideoPlayerStats';
 
     export default {
         name: 'VideoPlayer',
@@ -27,12 +29,15 @@
                 type: Function
             }
         },
+        components: {
+            VideoPlayerDescription,
+            VideoPlayerStats
+        },
         data() {
             return {
                 player: null
             }
         },
-        components: {},
         methods: {
             initializePlayer() {
                 let params = {
