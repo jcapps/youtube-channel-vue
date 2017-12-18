@@ -23,8 +23,6 @@
         },
         data() {
             return {
-                playlist: [],
-                videos: [],
                 loadingSpinner: require('../../images/loading.gif')
             };
         },
@@ -32,8 +30,7 @@
             isLoading() {
                 const totalAjaxCallsInProgress
                     = this.$store.getters.getAjaxCalls.recentUploadsPlaylist
-                    + this.$store.getters.getAjaxCalls.playlist
-                    + this.$store.getters.getAjaxCalls.videos;
+                    + this.$store.getters.getAjaxCalls.playlist;
 
                 return totalAjaxCallsInProgress > 0;
             },
@@ -41,20 +38,7 @@
                 return this.$store.getters.getRecentUploadsPlaylistId;
             },
             videoList() {
-                const playlist = this.$store.getters.getRecentUploadsPlaylist;
-                if (JSON.stringify(playlist) != JSON.stringify(this.playlist)) {
-                    this.playlist = playlist;
-                    this.getVideos(playlist);
-                }
-
-                const videos = this.$store.getters.getVideos;
-                if (
-                    (videos.length > 0) &&
-                    (JSON.stringify(videos) != JSON.stringify(this.videos.slice(-25)))
-                ) {
-                    this.videos = this.videos.concat(videos);
-                }
-                return this.videos;
+                return this.$store.getters.getRecentUploadsPlaylist;
             },
             videoPageToken() {
                 return this.$store.getters.getVideoPageToken;
@@ -64,17 +48,6 @@
             }
         },
         methods: {
-            getVideos(playlist) {
-                let videoIds = [];
-                for (let i = this.videoList.length; i < playlist.length; i++) {
-                    const videoId = playlist[i].snippet.resourceId.videoId;
-                    videoIds.push(videoId);
-                }
-                const videoIdString = videoIds.join(',');
-
-                this.$store.dispatch('getVideos', {videoIdString});
-            },
-
             loadMoreVideos() {
                 const nextPageToken = this.videoPageToken.nextPageToken;
                 const id = this.playlistId;

@@ -1,5 +1,5 @@
 <template>
-    <router-link :to="{path: '/watch/' + video.id}">
+    <router-link :to="{path: '/watch/' + video.snippet.resourceId.videoId}">
         <div class="video-result">
             <img 
                 height="90" 
