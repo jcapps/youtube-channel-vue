@@ -9,6 +9,15 @@ export default {
         });
     },
 
+    getNextVideos({commit, state}, {id, nextPageToken}) {
+        commit(types.GETTING_PLAYLIST);
+        return youtubeActions.getPlaylist(id, nextPageToken).then(videos => {
+            const playlist = [...state.playlist, ...videos.items];
+            videos.items = playlist;
+            commit(types.GET_NEXT_VIDEOS_SUCCESS, videos);
+        });
+    },
+
     getRecentUploadsPlaylist({commit}) {
         commit(types.GETTING_RECENT_UPLOADS_PLAYLIST_ID);
         commit(types.GETTING_RECENT_UPLOADS_PLAYLIST);
