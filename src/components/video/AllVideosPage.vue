@@ -3,7 +3,7 @@
         <div>
             <h2>Videos</h2>
             <div class="search-list">
-                <video-result v-for="video in videoList" :key="video.id" :video="composeVideo(video)"/>
+                <video-result v-for="video in videoList" :key="video.id" :video="video"/>
                 <a v-if="hasNextPageToken" id="view-more" @click="loadMoreVideos">
                     <div><b>View More</b></div>
                 </a>
@@ -52,10 +52,6 @@
                 const nextPageToken = this.videoPageToken.nextPageToken;
                 const id = this.playlistId;
                 this.$store.dispatch('getNextVideos', {id, nextPageToken});
-            },
-            composeVideo(video) {
-                video.id = video.snippet.resourceId.videoId;
-                return video;
             }
         },
         

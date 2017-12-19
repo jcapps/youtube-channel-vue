@@ -1,5 +1,5 @@
 <template>
-    <router-link :to="{path: '/watch/' + video.id}">
+    <router-link :to="{path: '/watch/' + videoId}">
         <div class="video-result">
             <img 
                 height="90" 
@@ -22,6 +22,16 @@
             video: {
                 type: Object,
                 required: true
+            }
+        },
+
+        computed: {
+            videoId() {
+                if (this.video.kind == 'youtube#searchResult') {
+                    return this.video.id;
+                } else {
+                    return this.video.snippet.resourceId.videoId;
+                }
             }
         }
     };
