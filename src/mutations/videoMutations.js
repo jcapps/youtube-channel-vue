@@ -6,7 +6,7 @@ export default {
         state.ajaxCallsInProgress.mostRecentUpload -= 1;
     },
     [types.GET_VIDEO_SUCCESS] (state, video) {
-        state.videos = video.items;
-        state.ajaxCallsInProgress.videos -= 1;
+        state.video = video.items[0];
+        state.ajaxCallsInProgress.video -= 1;
     }
 };

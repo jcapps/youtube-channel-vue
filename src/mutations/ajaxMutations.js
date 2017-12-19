@@ -20,6 +20,6 @@ export default {
         state.ajaxCallsInProgress.recentUploadsPlaylist += 1;
     },
     [types.GETTING_VIDEO_INFO] (state) {
-        state.ajaxCallsInProgress.videos += 1;
+        state.ajaxCallsInProgress.video += 1;
     },
 };

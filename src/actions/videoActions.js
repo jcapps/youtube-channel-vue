@@ -13,9 +13,9 @@ export default {
         });
     },
 
-    getVideos({commit}, {videoIdString, playlistIndex = 0}) {
+    getVideo({commit}, {id, playlistIndex = 0}) {
         commit(types.GETTING_VIDEO_INFO);
-        return youtubeActions.getVideoInfo(videoIdString).then(video => {
+        return youtubeActions.getVideoInfo(id).then(video => {
             commit(types.GET_VIDEO_SUCCESS, video, playlistIndex);
         });
     }

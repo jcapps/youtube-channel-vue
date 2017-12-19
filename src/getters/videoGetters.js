@@ -2,7 +2,7 @@ export default {
     getMostRecentUpload(state) {
         return state.mostRecentUpload;
     },
-    getVideos(state) {
-        return state.videos;
+    getVideo(state) {
+        return state.video;
     }
 };

@@ -5,13 +5,13 @@ export default {
     playlist: [],
     recentUploadsPlaylistId: '',
     videoPageToken: {prevPageToken: '', nextPageToken: ''},
-    videos: [],
+    video: {},
     ajaxCallsInProgress: {
         allPlaylists: 0,
         channelInfo: 0,
         mostRecentUpload: 0,
         playlist: 0,
         recentUploadsPlaylist: 0,
-        videos: 0
+        video: 0
     }
 };
