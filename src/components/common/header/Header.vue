@@ -33,12 +33,12 @@
             isLoading() {
                 const totalAjaxCallsInProgress
                     = this.$store.getters.getAjaxCalls.channelInfo
-                    + this.$store.getters.getAjaxCalls.allPlaylists;
+                    + this.$store.getters.getAjaxCalls.header;
 
                 return totalAjaxCallsInProgress > 0;
             },
             allPlaylists() {
-                return this.$store.getters.getAllPlaylists;
+                return this.$store.getters.getHeaderPlaylists;
             },
             channel() {
                 return this.$store.getters.getChannelInfo;
@@ -46,7 +46,7 @@
         },
 
         created() {
-            this.$store.dispatch('getAllPlaylists');
+            this.$store.dispatch('getHeaderPlaylists');
         }
     };
 </script>

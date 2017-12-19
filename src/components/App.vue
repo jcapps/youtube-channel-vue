@@ -23,7 +23,7 @@
                 // Don't render content until header has loaded
                 const totalAjaxCallsInProgress
                     = this.$store.getters.getAjaxCalls.channelInfo
-                    + this.$store.getters.getAjaxCalls.allPlaylists;
+                    + this.$store.getters.getAjaxCalls.header;
 
                 return totalAjaxCallsInProgress > 0;
             }

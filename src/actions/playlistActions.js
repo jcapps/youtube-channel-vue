@@ -9,6 +9,22 @@ export default {
         });
     },
 
+    getHeaderPlaylists({commit}) {
+        commit(types.GETTING_HEADER_PLAYLISTS);
+        return youtubeActions.getAllPlaylists().then(playlists => {
+            commit(types.GET_HEADER_PLAYLISTS_SUCCESS, playlists);
+        });
+    },
+
+    getNextPlaylists({commit, state}, {nextPageToken}) {
+        commit(types.GETTING_ALL_PLAYLISTS);
+        return youtubeActions.getAllPlaylists(nextPageToken).then(playlists => {
+            const allPlaylists = [...state.allPlaylists, ...playlists.items];
+            playlists.items = allPlaylists;
+            commit(types.GET_NEXT_PLAYLISTS_SUCCESS, playlists);
+        });
+    },
+
     getNextVideos({commit, state}, {id, nextPageToken}) {
         commit(types.GETTING_PLAYLIST);
         return youtubeActions.getPlaylist(id, nextPageToken).then(videos => {

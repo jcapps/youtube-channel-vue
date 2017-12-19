@@ -7,6 +7,9 @@ export default {
     [types.GETTING_CHANNEL_INFO] (state) {
         state.ajaxCallsInProgress.channelInfo += 1;
     },
+    [types.GETTING_HEADER_PLAYLISTS] (state) {
+        state.ajaxCallsInProgress.header += 1;
+    },
     [types.GETTING_MOST_RECENT_UPLOAD] (state) {
         state.ajaxCallsInProgress.mostRecentUpload += 1;
     },
